@@ -1,0 +1,20 @@
+﻿<div class ="summary" data-bind="ifnot: isInEditMode, css: toDoItem().statusCss">
+	<button class="edit-item" type="button" data-bind="click: edit">
+		<span class="glyphicon glyphicon-pencil"></span>
+	</button>
+	
+	<span data-bind="text: toDoItem().name"></span>
+	
+	<div class="statuses">
+		<label>Start<input type="radio" name="status" data-bind="checked: toDoItem().status" value="unstarted"/></label>
+		<label>Pending<input type="radio" name="status" data-bind="checked: toDoItem().status" value="started"/></label>
+		<label>Done<input type="radio" name="status" data-bind="checked: toDoItem().status" value="complete"/></label>
+		
+		<button class="remove-item" type="button" data-bind="click: remove">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
+	</div>
+</div>
+<div data-bind="if: isInEditMode">
+    <!--ko compose: taskEdit--><!--/ko-->
+</div>

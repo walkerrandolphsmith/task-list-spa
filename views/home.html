@@ -1,0 +1,16 @@
+﻿<div class="row">
+	<div class="col-md-12">
+		<h1>To Do List</h1>
+	</div>
+	<div class="mode">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default" data-bind="click: list">List</button>
+			<button type="button" class="btn btn-default" data-bind="click: cube">Cube</button>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12 to-do-list" data-bind="if: isList"><!--ko compose: tasksDueToday--><!--/ko--></div>
+	<div data-bind="ifnot: isList"><!--ko compose: tasksCube--><!--/ko--></div>
+</div>
+
