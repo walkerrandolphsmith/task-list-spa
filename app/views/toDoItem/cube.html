@@ -1,0 +1,54 @@
+﻿<div class="new-to-do-item">
+	<!--ko compose: tasksDueToday.newTask--><!--/ko-->
+</div>
+
+<div id="experiment">
+	<div id="cube-wrapper">
+		<div id="cube">       
+			<div class="face">
+				<header>
+					All Tasks
+				</header>
+				<ol class="list-group" data-bind="foreach: tasksDueToday.getItems('all')">
+					<li class="list-group-item" data-bind="compose: $data"></li>
+				</ol>
+				<footer>
+					<span data-bind="text: tasksDueToday.getNumberOfItems('all')"></span>
+				</footer>
+			</div>
+			<div class="face">
+				<header>
+					Not Started Tasks
+				</header>
+				<ol class="list-group" data-bind="foreach: tasksDueToday.getItems('unstarted')">
+					<li class="list-group-item" data-bind="compose: $data"></li>
+				</ol>
+				<footer>
+					<span data-bind="text: tasksDueToday.getNumberOfItems('unstarted')"></span>
+				</footer>
+			</div>
+			<div class="face">
+				<header>
+					Pending Tasks
+				</header>
+				<ol class="list-group" data-bind="foreach: tasksDueToday.getItems('started')">
+					<li class="list-group-item" data-bind="compose: $data"></li>
+				</ol>
+				<footer>
+					<span data-bind="text: tasksDueToday.getNumberOfItems('started')"></span>
+				</footer>
+			</div>
+			<div class="face">
+				<header>
+					Completed Tasks
+				</header>
+				<ol class="list-group" data-bind="foreach: tasksDueToday.getItems('complete')">
+					<li class="list-group-item" data-bind="compose: $data"></li>
+				</ol>
+				<footer>
+					<span data-bind="text: tasksDueToday.getNumberOfItems('complete')"></span>
+				</footer>
+			</div>      
+		</div>
+	</div>
+</div>

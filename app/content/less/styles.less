@@ -1,0 +1,348 @@
+﻿@color: #2E75AB;
+@darker-color: darken(@color, 20%);
+@spin-color: lighten(spin(@color, 10), 30%);
+
+@threeDee: ~"preserve-3d";
+
+
+.border-radius (@radius)
+{
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -o-border-radius: @radius;
+    -ms-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.text-shadow (@shadow)
+{
+    -webkit-text-shadow: @shadow @shadow;
+    -moz-text-shadow: @shadow @shadow;
+    -o-text-shadow: @shadow @shadow;
+    -ms-text-shadow: @shadow @shadow;
+    text-shadow: @shadow @shadow;
+}
+
+.side (@rotateY, @translateZ)
+{
+    -webkit-transform: rotateY(@rotateY) translateZ(@translateZ);
+    -moz-transform: rotateY(@rotateY) translateZ(@translateZ);
+    -o-transform: rotateY(@rotateY) translateZ(@translateZ);
+    -ms-transform: rotateY(@rotateY) translateZ(@translateZ);
+    transform: rotateY(@rotateY) translateZ(@translateZ);
+}
+
+.perspective(@perspective)
+{
+    -webkit-perspective: @perspective;
+    -moz-perspective: @perspective;
+    -o-perspective: @perspective;
+    -ms-perspective: @perspective;
+    perspective: @perspective;
+}
+
+.perspective-origin(@percent, @zoom)
+{
+    -webkit-perspective-origin: @percent @zoom;
+    -moz-perspective-origin: @percent @zoom;
+    -o-perspective-origin: @percent @zoom;
+    -ms-perspective-origin: @percent @zoom;
+    perspective-origin: @percent @zoom;
+}
+
+.threeDee (@threeDee) {
+    -webkit-transform-style: @threeDee;
+    -moz-transform-style: @threeDee;
+    -o-transform-style: @threeDee;
+    transform-style: @threeDee;
+}
+
+.transform-translate(@x, @y, @z) {
+     -webkit-transform: translate3d(@x, @y, @z);
+    -moz-transform: translate3d(@x, @y, @z);
+    -o-transform: translate3d(@x, @y, @z);
+    -ms-transform: translate3d(@x, @y, @z);
+    transform: translate3d(@x, @y, @z);
+}
+
+/*
+    grayscale, invert, sepia, contrast, saturate (%)
+    brightness(real)
+    blur(px)
+    hue-rotate(deg)
+*/
+
+.blur(@amount) {
+     -webkit-filter: blur(@amount);
+     -moz-filter: blur(@amount);
+     -o-filter: blur(@amount);
+     -ms-filter: blur(@amount);
+     filter: blur(@amount);
+}
+
+.brightness(@amount) {
+     -webkit-filter: brightness(@amount);
+     -moz-filter: brightness(@amount);
+     -o-filter: brightness(@amount);
+     -ms-filter: brightness(@amount);
+     filter: brightness(@amount);
+}
+
+.contrast(@amount) {
+     -webkit-filter: contrast(@amount);
+     -moz-filter: contrast(@amount);
+     -o-filter: contrast(@amount);
+     -ms-filter: contrast(@amount);
+     filter: contrast(@amount);
+}
+
+.invert(@amount) {
+     -webkit-filter: invert(@amount);
+     -moz-filter: invert(@amount);
+     -o-filter: invert(@amount);
+     -ms-filter: invert(@amount);
+     filter: invert(@amount);
+}
+
+.saturate(@amount) {
+     -webkit-filter: saturate(@amount);
+     -moz-filter: saturate(@amount);
+     -o-filter: saturate(@amount);
+     -ms-filter: saturate(@amount);
+     filter: saturate(@amount);
+}
+
+.hue-rotate(@amount) {
+     -webkit-filter: hue-rotate(@amount);
+     -moz-filter: hue-rotate(@amount);
+     -o-filter: hue-rotate(@amount);
+     -ms-filter: hue-rotate(@amount);
+     filter: hue-rotate(@amount);
+}
+
+.grayscale(@amount) {
+     -webkit-filter: grayscale(@amount);
+     -moz-filter: grayscale(@amount);
+     -o-filter: grayscale(@amount);
+     -ms-filter: grayscale(@amount);
+     filter: grayscale(@amount);
+}
+
+.sepia(@amount) {
+     -webkit-filter: sepia(@amount);
+     -moz-filter: sepia(@amount);
+     -o-filter: sepia(@amount);
+     -ms-filter: sepia(@amount);
+     filter: sepia(@amount);
+}
+
+.backstretch > img {
+  
+}
+
+body
+{
+    background: @color !important;
+}
+
+h1
+{
+    color: @darker-color;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 72px;
+    .text-shadow(-1px);
+}
+
+.to-do-list
+{
+    background: #fff;
+    margin: auto;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    -moz-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15);
+    .border-radius(10px);
+}
+
+.summary
+{
+    padding: 10px;
+}
+
+/*Last to do item in list*/
+.list-group-item:last-child
+{
+    margin-bottom: -20px;
+}
+
+.new-to-do-item
+{
+    text-align: center;
+    padding-top: 10px;
+}
+
+    .new-to-do-item .form-group
+    {
+        width: 100%;
+    }
+
+        .new-to-do-item .form-group > label
+        {
+            width: 69%;
+        }
+
+.form-inline button
+{
+    width: 29%;
+}
+
+.mode
+{
+    text-align:center;
+    padding: 10px;
+}
+
+.statuses
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.remove-item, .edit-item
+{
+    background: none;
+    border: none;
+}
+
+.remove-item
+{
+    display: inline-block;
+}
+
+    .remove-item:hover
+    {
+        color: red;
+    }
+
+.edit-item:hover
+{
+    color: blue;
+}
+
+li .edit-item, li .remove-item
+{
+    visibility: hidden;
+}
+
+li:hover .edit-item, li:hover .remove-item
+{
+    visibility: visible;
+}
+
+input[type=radio]
+{
+    cursor: pointer;
+}
+
+    input[type=radio]:checked
+    {
+    }
+
+footer
+{
+    text-align: center;
+    padding: 10px;
+}
+
+    /*The section containing the list count*/
+    footer span
+    {
+        font-size: 18px;
+        float: left;
+    }
+
+.filters
+{
+    list-style: none;
+}
+
+    .filters li
+    {
+        display: inline;
+    }
+
+        .filters li:hover
+        {
+            text-decoration: none;
+        }
+
+        .filters li a
+        {
+            color: #000;
+        }
+
+
+
+/**********CUBE******************/
+#experiment
+{
+    .perspective(1000);
+    /*.perspective-origin(50%, 200px);*/
+}
+
+#cube
+{
+    position: relative;
+    margin: 100px auto 0;
+    height: 40px;
+    width: 400px;
+    -webkit-transition: -webkit-transform 1s linear;
+    -moz-transition: -moz-transform 1s linear;
+    -o-transition: -o-transform 1s linear;
+    transition: transform 1s linear;
+    .threeDee (@threeDee);
+}
+
+#cube-wrapper {
+    .transform-translate(0, 0, -200px);
+    .threeDee (@threeDee);
+}
+.face
+{
+    position: absolute;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    min-height: 100px;
+    width: 360px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.99);
+    line-height: 1em;
+    color: #000;
+    border: 1px solid #555;
+    border-radius: 3px;
+}
+
+#cube > div:first-child
+{
+    .transform-translate(0, 0, 200px);
+}
+
+#cube > div:nth-child(2)
+{
+    .side (90deg, 200px);
+}
+
+#cube > div:nth-child(3)
+{
+    .side(180deg, 200px);
+}
+
+#cube > div:nth-child(4)
+{
+    .side(-90deg, 200px);
+}
+/*End Cube*/

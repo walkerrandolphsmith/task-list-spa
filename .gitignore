@@ -1,0 +1,11 @@
+*.user
+*.suo
+bin
+obj
+.grunt
+node_modules
+packages
+.nuget
+*.orig
+*.css
+*.min.css

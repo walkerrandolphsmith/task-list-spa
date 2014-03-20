@@ -1,0 +1,24 @@
+html(lang="en")
+	head
+		title= pageTitle
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+		meta(name='apple-mobile-web-app-capable', content='yes')
+		meta(name='apple-mobile-web-app-status-bar-style', content='black')
+		meta(name='format-detection', content='telephone=no')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		link(rel='apple-touch-startup-image', href='content/images/ios-startup-image-landscape.png', media='(orientation:landscape)')
+		link(rel='apple-touch-startup-image', href='content/images/ios-startup-image-portrait.png', media='(orientation:portrait)')
+		link(rel='apple-touch-icon', href='content/images/icon.png')
+		link(rel='stylesheet', href='concat.css')
+	body
+		#applicationHost
+			.splash
+				.message
+					| Durandal Starter Kit
+					i.icon-spinner.icon-2x.icon-spin.active
+		script(type='text/javascript', src='scripts/jquery-1.9.1.js')
+		script(type='text/javascript', src='scripts/bootstrap.js')
+		script(type='text/javascript', src='scripts/knockout-2.3.0.js')
+		script(type='text/javascript', src='scripts/jquery.backstretch.js')
+		script(type='text/javascript', src='scripts/require.js', data-main='main')

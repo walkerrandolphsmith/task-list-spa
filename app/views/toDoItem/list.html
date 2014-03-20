@@ -1,0 +1,17 @@
+﻿<div class="new-to-do-item">
+	<!--ko compose: newTask--><!--/ko-->
+</div>
+
+<ol class="list-group" data-bind="foreach: filteredItems">
+	<li class="list-group-item" data-bind="compose: $data"></li>
+</ol>
+
+<footer>
+	<span data-bind="text: numberOfTasks"></span>
+	<ul class="filters">
+		<li><a id="status-all" href="#" data-bind="click: filterAll">All</a></li>
+		<li><a id="status-started" href="#" data-bind="click: filterUnstarted">Start</a></li>
+		<li><a id="status-unstarted" href="#" data-bind="click: filterStarted">Pendning</a></li>
+		<li><a id="status-complete" href="#" data-bind="click: filterComplete">Done</a></li>
+	</ul>
+</footer>
