@@ -6,13 +6,9 @@ module.exports = function(grunt){
 			dev: {
 				files: [
                 {
-                    cwd: 'src',
-                    expand: true,
-                    src:  ['app/content/less/*.less'],
-                    dest: 'app/content/styles.css',
-                    ext: '.css'
+                    "app/concat.css": "app/content/less/styles.less"
                 }
-                ]
+                 ]
 			},
 		    dist: {
 				files: { "styles.min.css": "styles.less" },
@@ -102,5 +98,7 @@ module.exports = function(grunt){
 	grunt.loadTasks('grunt-tasks/');
 	//Alias Task grunt.registerTask(taskName, [description, ] taskList)
 	grunt.registerTask('build', ['jade:dev', 'markdown', 'less:dev', 'concat', 'pakmanager', 'uglify']);
-	grunt.registerTask('default', ['build', 'connect:server', 'exec', 'watch']);
+    grunt.registerTask('test', ['connect:server', 'exec', 'watch']);
+
+    grunt.registerTask('default', ['connect:server', 'watch']);
 };
