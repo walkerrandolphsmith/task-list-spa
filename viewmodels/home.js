@@ -1,18 +1,16 @@
 ﻿define([
         "knockout",
         "durandal/app",
-        "viewmodels/modalMessage",
         "viewmodels/toDoItem/list",
-		"viewmodels/toDoItem/cube"
+		    "viewmodels/toDoItem/cube"
 ], function (
         ko,
         app,
-        ModalMessage,
         ToDoItems,
-		tasksCube
+		    tasksCube
     ) {
 	"use strict";
-	
+
 	var isList = ko.observable("list");
 	var obj = {
 		tasksDueToday: new ToDoItems(),
@@ -24,17 +22,13 @@
 };
 
     obj.activate = function () {
-        var readMe = new ModalMessage();
-        app.showDialog(readMe, {
-            heading: "Read Me",
-            body: "Read me body"
-        });
+        
     };
 
 	obj.list = function() {
 		isList("list");
 	};
-	
+
 	obj.cube = function () {
 		isList("cube");
 	};
